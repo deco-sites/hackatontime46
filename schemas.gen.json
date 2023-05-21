@@ -59,6 +59,7 @@
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
+              "./islands/Countdown.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
@@ -82,9 +83,11 @@
               "$live/sections/UseSlot.tsx",
               "deco-sites/hackatontime46/sections/BannerGrid.tsx",
               "deco-sites/hackatontime46/sections/BannerPLP.tsx",
+              "deco-sites/hackatontime46/sections/CampaignTimer.tsx",
               "deco-sites/hackatontime46/sections/Carousel.tsx",
               "deco-sites/hackatontime46/sections/CookieConsent.tsx",
               "deco-sites/hackatontime46/sections/DesignSystem.tsx",
+              "deco-sites/hackatontime46/sections/FAQ.tsx",
               "deco-sites/hackatontime46/sections/Features.tsx",
               "deco-sites/hackatontime46/sections/Footer.tsx",
               "deco-sites/hackatontime46/sections/Header.tsx",
@@ -93,6 +96,7 @@
               "deco-sites/hackatontime46/sections/ProductDetails.tsx",
               "deco-sites/hackatontime46/sections/ProductShelf.tsx",
               "deco-sites/hackatontime46/sections/SearchResult.tsx",
+              "deco-sites/hackatontime46/sections/ShortCuts.tsx",
               "deco-sites/hackatontime46/sections/WhatsApp.tsx",
               "deco-sites/hackatontime46/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -7201,6 +7205,59 @@
       "required": [],
       "title": "deco-sites/hackatontime46/components/ui/BannerPLP.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9DYW1wYWlnblRpbWVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "targetDate": {
+          "type": "string",
+          "title": "Tempo para expirar",
+          "format": "date"
+        },
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Texto",
+          "default": "Time left for a campaign to end wth a link"
+        },
+        "labelButton": {
+          "type": "string",
+          "title": "Texto do botão",
+          "default": "button"
+        },
+        "actionButton": {
+          "type": "string",
+          "title": "Ação do botão",
+          "default": "#"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "default"
+            },
+            {
+              "type": "string",
+              "const": "second"
+            }
+          ],
+          "type": "string",
+          "title": "Versão do bloco",
+          "default": "default"
+        }
+      },
+      "required": [
+        "targetDate",
+        "text",
+        "labelButton",
+        "actionButton",
+        "variant"
+      ],
+      "title": "deco-sites/hackatontime46/sections/CampaignTimer.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9jb21wb25lbnRzL3VpL0Jhbm5lckNhcm91c2VsLnRzeA==@Banner": {
       "type": "object",
       "properties": {
@@ -7502,7 +7559,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0udHN4@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
+    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0udHN4@Colors&e96a7228347db051b0a8bc35e2c74468": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0udHN4@Colors"
@@ -7518,7 +7575,7 @@
           "required": []
         }
       ],
-      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
+      "title": "Colors&e96a7228347db051b0a8bc35e2c74468"
     },
     "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous": {
       "type": "object",
@@ -7621,7 +7678,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0udHN4@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0udHN4@Colors&e96a7228347db051b0a8bc35e2c74468",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -7635,6 +7692,84 @@
       },
       "required": [],
       "title": "deco-sites/hackatontime46/sections/DesignSystem.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9GQVEudHN4@FAQProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string",
+                "title": "Question"
+              },
+              "answer": {
+                "type": "string",
+                "title": "Answer"
+              }
+            },
+            "required": [
+              "question",
+              "answer"
+            ]
+          },
+          "title": "Questions"
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "description": {
+              "type": "string",
+              "title": "Description"
+            },
+            "button": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "Text"
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link"
+                }
+              },
+              "required": [
+                "text",
+                "link"
+              ],
+              "title": "Button"
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "button"
+          ],
+          "title": "Contact"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "questions",
+        "contact"
+      ],
+      "title": "deco-sites/hackatontime46/sections/FAQ.tsx@FAQProps"
     },
     "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9jb21wb25lbnRzL3VpL0ZlYXR1cmVzLnRzeA==@Feature": {
       "type": "object",
@@ -7772,6 +7907,22 @@
             {
               "type": "string",
               "const": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Message"
+            },
+            {
+              "type": "string",
+              "const": "Ruler"
+            },
+            {
+              "type": "string",
+              "const": "TruckDelivery"
+            },
+            {
+              "type": "string",
+              "const": "ArrowsRightLeft"
             }
           ],
           "type": "string",
@@ -7970,6 +8121,22 @@
             {
               "type": "string",
               "const": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Message"
+            },
+            {
+              "type": "string",
+              "const": "Ruler"
+            },
+            {
+              "type": "string",
+              "const": "TruckDelivery"
+            },
+            {
+              "type": "string",
+              "const": "ArrowsRightLeft"
             }
           ],
           "type": "string",
@@ -8164,6 +8331,10 @@
     "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@Props": {
       "type": "object",
       "properties": {
+        "logo": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Logo"
+        },
         "alerts": {
           "type": "array",
           "items": {
@@ -8191,6 +8362,7 @@
         }
       },
       "required": [
+        "logo",
         "alerts"
       ],
       "title": "deco-sites/hackatontime46/components/header/Header.tsx@Props"
@@ -8455,6 +8627,197 @@
         "columns"
       ],
       "title": "deco-sites/hackatontime46/components/search/SearchResult.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9TaG9ydEN1dHMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "shortcuts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Label"
+              },
+              "icon": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "ChevronLeft"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronRight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronUp"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronDown"
+                  },
+                  {
+                    "type": "string",
+                    "const": "QuestionMarkCircle"
+                  },
+                  {
+                    "type": "string",
+                    "const": "User"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ShoppingCart"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Bars3"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Heart"
+                  },
+                  {
+                    "type": "string",
+                    "const": "MagnifyingGlass"
+                  },
+                  {
+                    "type": "string",
+                    "const": "XMark"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Plus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Minus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "MapPin"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Phone"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Elo"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Mastercard"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Visa"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Pix"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Logo"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Facebook"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Instagram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Tiktok"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Truck"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Discount"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Return"
+                  },
+                  {
+                    "type": "string",
+                    "const": "CreditCard"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Deco"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Discord"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Trash"
+                  },
+                  {
+                    "type": "string",
+                    "const": "FilterList"
+                  },
+                  {
+                    "type": "string",
+                    "const": "WhatsApp"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ArrowsPointingOut"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Message"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Ruler"
+                  },
+                  {
+                    "type": "string",
+                    "const": "TruckDelivery"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ArrowsRightLeft"
+                  }
+                ],
+                "type": "string",
+                "title": "Icon"
+              },
+              "tooltipLabel": {
+                "type": "string",
+                "title": "Tooltip Label"
+              },
+              "link": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "title": "Link"
+              }
+            },
+            "required": [
+              "label",
+              "icon",
+              "tooltipLabel"
+            ]
+          },
+          "title": "Shortcuts",
+          "description": "Cadastre cada shortcurt"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/hackatontime46/sections/ShortCuts.tsx@Props"
     },
     "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9jb21wb25lbnRzL3VpL1doYXRzQXBwLnRzeA==@Props": {
       "type": "object",
@@ -8857,7 +9220,11 @@
         },
         "name": {
           "type": "string",
-          "title": "Name"
+          "title": "The audience name (will be used on cookies).",
+          "description": "Add a meaningful short word for the audience name.",
+          "maxLength": 22,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9_]+$"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
@@ -8973,7 +9340,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -8991,13 +9358,13 @@
           ]
         }
       ],
-      "title": "95abd76f92dd138f258080286726977e|WorkflowRef"
+      "title": "6fafe0f553db3c0685828404a37be338|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
@@ -10404,6 +10771,22 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0NvdW50ZG93bi50c3g=": {
+      "title": "./islands/Countdown.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Countdown.tsx"
+          ],
+          "default": "./islands/Countdown.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
       "title": "./islands/HeaderButton.tsx",
       "type": "object",
@@ -10846,6 +11229,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9DYW1wYWlnblRpbWVyLnRzeA==": {
+      "title": "deco-sites/hackatontime46/sections/CampaignTimer.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9DYW1wYWlnblRpbWVyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/hackatontime46/sections/CampaignTimer.tsx"
+          ],
+          "default": "deco-sites/hackatontime46/sections/CampaignTimer.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9DYXJvdXNlbC50c3g=": {
       "title": "deco-sites/hackatontime46/sections/Carousel.tsx",
       "type": "object",
@@ -10901,6 +11305,27 @@
             "deco-sites/hackatontime46/sections/DesignSystem.tsx"
           ],
           "default": "deco-sites/hackatontime46/sections/DesignSystem.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9GQVEudHN4": {
+      "title": "deco-sites/hackatontime46/sections/FAQ.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9GQVEudHN4@FAQProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/hackatontime46/sections/FAQ.tsx"
+          ],
+          "default": "deco-sites/hackatontime46/sections/FAQ.tsx"
         }
       }
     },
@@ -11069,6 +11494,27 @@
             "deco-sites/hackatontime46/sections/SearchResult.tsx"
           ],
           "default": "deco-sites/hackatontime46/sections/SearchResult.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9TaG9ydEN1dHMudHN4": {
+      "title": "deco-sites/hackatontime46/sections/ShortCuts.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9TaG9ydEN1dHMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/hackatontime46/sections/ShortCuts.tsx"
+          ],
+          "default": "deco-sites/hackatontime46/sections/ShortCuts.tsx"
         }
       }
     },
@@ -12152,6 +12598,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0NvdW50ZG93bi50c3g="
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
         },
         {
@@ -12245,6 +12694,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9CYW5uZXJQTFAudHN4"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9DYW1wYWlnblRpbWVyLnRzeA=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9DYXJvdXNlbC50c3g="
         },
         {
@@ -12252,6 +12704,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9EZXNpZ25TeXN0ZW0udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9GQVEudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9GZWF0dXJlcy50c3g="
@@ -12276,6 +12731,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9TZWFyY2hSZXN1bHQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9TaG9ydEN1dHMudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRvbnRpbWU0Ni9zZWN0aW9ucy9XaGF0c0FwcC50c3g="

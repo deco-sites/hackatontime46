@@ -3,10 +3,13 @@ import Buttons from "$store/islands/HeaderButton.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
+import Image from "deco-sites/std/components/Image.tsx";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { INavItem } from "./NavItem.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 
-function Navbar({ items, searchbar }: {
+function Navbar({ items, searchbar, logo }: {
+  logo: LiveImage
   items: INavItem[];
   searchbar: SearchbarProps;
 }) {
@@ -21,11 +24,13 @@ function Navbar({ items, searchbar }: {
 
         <a
           href="/"
-          class="flex-grow inline-flex items-center"
+          class="flex-grow inline-flex items-center h-full"
           style={{ minHeight: navbarHeight }}
           aria-label="Store logo"
         >
+          {logo ? <Image src={logo} alt="logo" width={100} height={50} className="h-full" /> :
           <Icon id="Logo" width={126} height={16} />
+          }
         </a>
 
         <div class="flex gap-1">
